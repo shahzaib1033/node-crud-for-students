@@ -87,7 +87,7 @@ app.delete('/items/:id', async (req, res) => {
 
 // Default route
 app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Hello World' });
+    res.status(200).json({ message: 'UnAutherized' });
 });
 
 // Start the server
