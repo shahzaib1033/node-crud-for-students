@@ -58,6 +58,16 @@ app.get('/items', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+// Read
+app.get('/items/:id', async (req, res) => {
+    try {
+        
+        const items = await Item.findById(req.params.id);
+        res.status(200).json(items);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
 
 // Update
 app.put('/items/:id', async (req, res) => {
